@@ -28,3 +28,7 @@ Route::get('/now', function () {
 */
 
 Route::resource('/serverinfo', 'ServerinfoController');
+
+Route::get('/file', 'FileController@show');
+Route::post('/upload', 'FileController@upload');
+Route::get('/viewpdf', 'FileController@viewpdf');
