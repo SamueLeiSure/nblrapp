@@ -18,7 +18,7 @@ class FileController extends Controller
 		return view('file.create');
 	}
 
-    public function upload(Request $request)
+    public function store(Request $request)
     {
  		$file = $request->source;
 

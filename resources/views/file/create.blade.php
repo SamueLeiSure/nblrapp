@@ -1,7 +1,7 @@
 @extends('layouts.amaze')
 
 @section('content')
-<form class="am-form" action="{{ url('/upload') }}" method="POST" enctype="multipart/form-data">
+<form class="am-form" action="{{ url('/file') }}" method="POST" enctype="multipart/form-data">
     {{ csrf_field() }}
     <div class="am-form-group am-form-file">
         <button type="button" class="am-btn am-btn-danger am-btn-sm">

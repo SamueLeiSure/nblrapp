@@ -29,7 +29,4 @@ Route::get('/now', function () {
 
 Route::resource('/serverinfo', 'ServerinfoController');
 Route::resource('/file', 'FileController');
-
-//Route::get('/file', 'FileController@show');
-Route::post('/upload', 'FileController@upload');
-Route::get('/viewpdf', 'FileController@viewpdf');
+Route::resource('/tgsign', 'TgsignController');
