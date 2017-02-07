@@ -15,6 +15,8 @@
     <link href="/css/admin.css" rel="stylesheet">
     <link href="/css/amazeui.datatables.css" rel="stylesheet">
     <!-- Scripts -->
+
+
 </head>
 <body>
     @yield('content')
@@ -22,6 +24,7 @@
     <!-- Scripts -->
     <script src="/js/jquery.min.js"></script>
     <script src="/js/amazeui.datatables.min.js"></script>
+    <script src="/js/pdfobject.min.js"></script>
     <script>
   $(function() {
     $('#example').DataTable();
@@ -38,5 +41,7 @@
     });
   });
 </script>
+
+
 </body>
 </html>
