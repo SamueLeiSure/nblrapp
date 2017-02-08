@@ -21,7 +21,7 @@
         <br>
         <br>
         <div class="am-g">
-            <div class="am-u-sm-12">
+            <div class="am-u-sm-8">
                 <table class="am-table am-table-striped am-table-hover table-main" id="example">
                     <thead>
                         <tr>
@@ -56,7 +56,11 @@
                     </tbody>
                 </table>
             </div>
+            <div id="donut-example" class="am-u-sm-4" style="margin-top: 4em;"></div>
         </div>
     </div>
 </div>
+@include('layouts.jquery')
+@include('layouts.datatables')
+@include('layouts.morris')
 @endsection

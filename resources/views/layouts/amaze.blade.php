@@ -15,33 +15,23 @@
     <link href="/css/admin.css" rel="stylesheet">
     <link href="/css/amazeui.datatables.css" rel="stylesheet">
     <!-- Scripts -->
-
-
 </head>
 <body>
     @yield('content')
 
     <!-- Scripts -->
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/amazeui.datatables.min.js"></script>
-    <script src="/js/pdfobject.min.js"></script>
+    <script src="/js/pdfobject.min.js"></script>  
+
     <script>
-  $(function() {
-    $('#example').DataTable();
-  });
-</script>
-<script>
-  $(function() {
-    $('#doc-form-file').on('change', function() {
-      var fileNames = '';
-      $.each(this.files, function() {
-        fileNames += '<span class="am-badge">' + this.name + '</span> ';
-      });
+      $(function() {
+        $('#doc-form-file').on('change', function() {
+          var fileNames = '';
+          $.each(this.files, function() {
+          fileNames += '<span class="am-badge">' + this.name + '</span> ';
+        });
       $('#file-list').html(fileNames);
+      });
     });
-  });
-</script>
-
-
+    </script>
 </body>
 </html>

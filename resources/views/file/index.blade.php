@@ -55,4 +55,6 @@
         </div>
     </div>
 </div>
+@include('layouts.jquery')
+@include('layouts.datatables')
 @endsection

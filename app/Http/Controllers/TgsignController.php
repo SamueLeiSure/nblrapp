@@ -4,12 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Tgsign;
+use DB;
 
 class TgsignController extends Controller
 {
     public function index()
     {
-    	return view('tgsign.index')->withTgsigns(Tgsign::all());
+        $count = DB::table('tgsigns')
+                        ->select(DB::raw('county, count(*) as count'))
+                        ->where('state', '=', '已领')
+                        ->groupBy('county')
+                        ->get();
+    	return view('tgsign.index')->withTgsigns(Tgsign::all())->withCounts($count);
     }
 
     public function create()
