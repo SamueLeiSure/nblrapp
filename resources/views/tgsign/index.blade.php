@@ -56,7 +56,7 @@
                     </tbody>
                 </table>
             </div>
-            <div id="donut-example" class="am-u-sm-4" style="margin-top: 4em;"></div>
+            <div id="donut-example" class="am-u-sm-4" style="margin-top: 6em;"></div>
         </div>
     </div>
 </div>
