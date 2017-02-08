@@ -58,8 +58,10 @@
     </div>
 
     <!-- Scripts -->
-    <script src="/js/pdfobject.min.js"></script>  
+    <script src="/js/jquery.min.js"></script>
 
+    @yield('jsgroup')
+    
     <script>
       $(function() {
         $('#doc-form-file').on('change', function() {

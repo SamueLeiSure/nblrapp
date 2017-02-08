@@ -55,6 +55,7 @@
         </div>
     </div>
 </div>
-@include('layouts.jquery')
+@section('jsgroup')
 @include('layouts.datatables')
+@endsection
 @endsection
