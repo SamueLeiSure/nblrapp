@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddRoleToTasksTable extends Migration
+class AddRoleToUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class AddRoleToTasksTable extends Migration
      */
     public function up()
     {
-        Schema::table('tasks', function (Blueprint $table) {
-            $table->string('role', 1);
+        Schema::table('users', function (Blueprint $table) {
+            $table->string('role', 1)->default('0');
+            /** 0 normal
+              * 1 sysuper
+              * 2 super
+              */
         });
     }
 
@@ -23,9 +27,9 @@ class AddRoleToTasksTable extends Migration
      *
      * @return void
      */
-    public function down()
+    public function users()
     {
-        Schema::table('tasks', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {
             //
         });
     }

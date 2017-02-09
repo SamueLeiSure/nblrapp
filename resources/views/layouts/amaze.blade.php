@@ -51,26 +51,16 @@
     <div class="admin-sidebar am-offcanvas" id="admin-offcanvas">
       <div class="am-offcanvas-bar admin-offcanvas-bar">
         <ul class="am-list admin-sidebar-list">
-          <li>
-            <a href="{{ url('/serverinfo') }}">
-              <span class="am-icon-file"> 服务器信息</span>
-            </a>
-          </li>
-          <li>
-            <a href="{{ url('/file') }}">
-              <span class="am-icon-file"> 我的公文</span>
-            </a>
-          </li>
-          <li>
-            <a href="{{ url('/tgsign') }}">
-              <span class="am-icon-file"> 天谷签章</span>
-            </a>
-          </li>
-          <li>
-            <a href="{{ url('/task') }}">
-              <span class="am-icon-file"> 支书姬大大</span>
-            </a>
-          </li>
+          @if(Auth::user()->role == '2')
+            @include('layouts.serverinfo')
+            @include('layouts.myfiles')
+            @include('layouts.tgsign')
+            @include('layouts.telrecord')
+          @elseif(Auth::user()->role == '1')
+            @include('layouts.telrecord')
+          @elseif(Auth::user()->role == '0')
+            @include('layouts.telrecord')
+          @endif
         </ul>
       </div>
     </div>

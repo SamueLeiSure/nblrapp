@@ -4,7 +4,7 @@
 <div class="admin-content">
     <div class="admin-content-body">
         <div class="am-cf am-padding am-padding-bottom-0">
-            <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">我的记录</strong> / <small>Tel-record</small></div>
+            <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">电话记录</strong> / <small>Tel-record</small></div>
         </div>
         <hr>
         <div class="am-g">
