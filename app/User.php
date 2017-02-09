@@ -15,7 +15,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        // original map : 'name', 'email', 'password', then we change the username as user.
+        'name', 'username', 'password',
     ];
 
     /**
