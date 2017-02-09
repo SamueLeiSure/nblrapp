@@ -30,3 +30,4 @@ Route::get('/now', function () {
 Route::resource('/serverinfo', 'ServerinfoController');
 Route::resource('/file', 'FileController');
 Route::resource('/tgsign', 'TgsignController');
+Route::resource('/task', 'TaskController');

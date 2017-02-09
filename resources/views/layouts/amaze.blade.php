@@ -26,7 +26,24 @@
     </button>
 
     <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
-      <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list"></ul>
+      <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list">
+        <li class="am-dropdown" data-am-dropdown>
+          <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
+            <span class="am-icon-users"></span> {{ Auth::user()->name }} <span class="am-icon-caret-down"></span>
+          </a>
+          <ul class="am-dropdown-content">
+            <li>
+              <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                <span class="am-icon-power-off"></span> 退出
+              </a>
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                {{ csrf_field() }}
+              </form>
+            </li>
+          </ul>
+        </li>
+      </ul>
     </div>
   </header>
 
@@ -47,6 +64,11 @@
           <li>
             <a href="{{ url('/tgsign') }}">
               <span class="am-icon-file"> 天谷签章</span>
+            </a>
+          </li>
+          <li>
+            <a href="{{ url('/task') }}">
+              <span class="am-icon-file"> 支书姬大大</span>
             </a>
           </li>
         </ul>
