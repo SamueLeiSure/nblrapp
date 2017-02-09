@@ -27,7 +27,7 @@ class AddRoleToUsersTable extends Migration
      *
      * @return void
      */
-    public function users()
+    public function down()
     {
         Schema::table('users', function (Blueprint $table) {
             //
