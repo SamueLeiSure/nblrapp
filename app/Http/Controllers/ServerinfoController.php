@@ -7,6 +7,11 @@ use App\Serverinfo;
 
 class ServerinfoController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
     	return view('serverinfo.index')->withServerinfos(Serverinfo::all());

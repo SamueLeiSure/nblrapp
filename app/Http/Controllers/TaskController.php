@@ -10,6 +10,7 @@ class TaskController extends Controller
 {
     public function __construct(TaskRepository $tasks)
     {
+        $this->middleware('auth');
         $this->tasks = $tasks;
     }
 
@@ -78,5 +79,38 @@ class TaskController extends Controller
     {
         Task::find($id)->delete();
         return redirect()->back();
+    }
+
+    public function search(Request $request)
+    {
+/*        $tasks = Task::where('user_name', $request->user_name)
+                            ->where('cus_id', $request->cus_id)
+                            ->where('cus_tel', $request->cus_tel)
+                            ->where('call_date', $request->call_date)
+                            ->where('call_why', $request->call_why)
+                            ->where('call_ok', $request->call_ok)
+                            ->where('call_bak', $request->call_bak)
+                            ->get();*/
+        $collection = Task::select('*');
+        if ($request->user_name)
+            $collection = $collection->where('user_name', $request->user_name);
+        if ($request->cus_id)
+            $collection = $collection->where('cus_id', $request->cus_id);
+        if ($request->cus_tel)
+            $collection = $collection->where('cus_tel', $request->cus_tel);
+        if ($request->call_date)
+            $collection = $collection->where('call_date', $request->call_date);
+        if ($request->call_why)
+            $collection = $collection->where('call_why', $request->call_why);
+        if ($request->call_ok)
+            $collection = $collection->where('call_ok', $request->call_ok);
+        if ($request->call_bak)
+            $collection = $collection->where('call_bak', $request->call_bak);
+
+        $tasks = $collection->get();
+
+        return view('task.index', [
+            'tasks' =>$tasks,
+        ]);
     }
 }

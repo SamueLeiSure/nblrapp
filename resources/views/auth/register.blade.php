@@ -15,7 +15,7 @@
     </div>
 
     <div class="am-form-group">
-        <label for="doc-ipt-username">名称</label>
+        <label for="doc-ipt-username">用户名</label>
         <input type="text" name="username" id="doc-ipt-username" value="{{ old('username') }}" placeholder="请输入用户名" required>
         @if ($errors->has('username'))
         <span>
@@ -35,7 +35,7 @@
     </div>
 
     <div class="am-form-group">
-        <label for="doc-ipt-password-confirm">密码</label>
+        <label for="doc-ipt-password-confirm">确认密码</label>
         <input type="password" name="password_confirmation" id="doc-ipt-password-confirm" required>
     </div>
 

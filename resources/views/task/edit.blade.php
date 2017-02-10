@@ -30,6 +30,7 @@
             </div>
             <div class="am-form-group">
                 <label>拨打成功</label>
+                @if ($task->call_ok == "是")
                 <div class="am-radio">
                     <label>
                         <input type="radio" name="call_ok" id="call_ok_yes" value="是" checked>是
@@ -40,6 +41,18 @@
                         <input type="radio" name="call_ok" id="call_ok_no" value="否">否
                     </label>
                 </div>
+                @else
+                <div class="am-radio">
+                    <label>
+                        <input type="radio" name="call_ok" id="call_ok_yes" value="是">是
+                    </label>
+                </div>
+                <div class="am-radio">
+                    <label>
+                        <input type="radio" name="call_ok" id="call_ok_no" value="否" checked>否
+                    </label>
+                </div>
+                @endif      
             </div>
             <div class="am-form-group">
                 <label for="doc-ipt-callbak">备注</label>

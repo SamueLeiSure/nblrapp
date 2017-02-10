@@ -8,13 +8,66 @@
         </div>
         <hr>
         <div class="am-g">
-            <div class="am-u-sm-12 am-u-md-6">
+            <div class="am-u-sm-12 am-u-md-8">
                 <div class="am-btn-toolbar">
                     <div class="am-btn-group am-btn-group-xs">
                         <a href="{{ url('/task/create') }}" class="am-btn am-btn-success">
                             <span class="am-icon-plus"> 新增</span>
                         </a>
+                        <button class="am-btn am-btn-warning" data-am-collapse="{target: '#search-collapse'}">
+                            <span class="am-icon-search"> 查询</span>
+                        </button>
+                        <a href="{{ url('/task') }}" class="am-btn am-btn-danger">
+                            <span class="am-icon-refresh"> 重置</span>
+                        </a>
                     </div>
+                </div>
+                <br>
+                <div class="am-collapse" id="search-collapse">
+                    <form action="{{ url('/searchtask') }}" class="am-form-inline" method="POST">
+                        {{ csrf_field() }}
+                        @if (Auth::user()->role == 1)
+                        <div class="am-form-group">
+                            <input type="text" class="am-form-field" placeholder="员工号" name="user_name">
+                        </div>
+                        @else
+                        <div class="am-form-group">
+                            <input type="text" class="am-form-field" value="{{ Auth::user()->name }}" disabled>
+                            <input type="hidden" name="user_name" value="{{ Auth::user()->name }}">
+                        </div>
+                        @endif
+                        <div class="am-form-group">
+                            <input type="text" class="am-form-field" placeholder="客户号" name="cus_id">
+                        </div>
+                        <br>
+                        <div class="am-form-group">
+                            <input type="text" class="am-form-field" placeholder="客户电话" name="cus_tel">
+                        </div>
+                        <div class="am-form-group">
+                            <input type="text" class="am-form-field" placeholder="拨打事由" name="call_why">
+                        </div>
+                        <div class="am-form-group">
+                            <input type="text" class="am-form-field" placeholder="备注" name="call_bak">
+                        </div>
+                        <div class="am-form-group">
+                            <input type="date" class="am-form-field" placeholder="拨打日期" name="call_date">
+                        </div>
+                        <div class="am-form-group">
+                            <label>拨打成功:</label>
+                            <div class="am-radio">
+                                <label>
+                                    <input type="radio" name="call_ok" value="是">是
+                                </label>
+                            </div>
+                            <div class="am-radio">
+                                <label>
+                                    <input type="radio" name="call_ok" value="否">否
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="am-btn am-btn-default">提交</button>
+                    </form>
                 </div>
             </div>
         </div>

@@ -51,14 +51,18 @@
     <div class="admin-sidebar am-offcanvas" id="admin-offcanvas">
       <div class="am-offcanvas-bar admin-offcanvas-bar">
         <ul class="am-list admin-sidebar-list">
-          @if(Auth::user()->role == '2')
+          @if (Auth::user()->role == '3')
             @include('layouts.serverinfo')
             @include('layouts.myfiles')
             @include('layouts.tgsign')
             @include('layouts.telrecord')
-          @elseif(Auth::user()->role == '1')
+            @include('layouts.userinfo')
+          @elseif (Auth::user()->role == '2')
             @include('layouts.telrecord')
-          @elseif(Auth::user()->role == '0')
+            @include('layouts.userinfo')
+          @elseif (Auth::user()->role == '1')
+            @include('layouts.telrecord')
+          @elseif (Auth::user()->role == '0')
             @include('layouts.telrecord')
           @endif
         </ul>

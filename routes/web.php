@@ -31,3 +31,10 @@ Route::resource('/serverinfo', 'ServerinfoController');
 Route::resource('/file', 'FileController');
 Route::resource('/tgsign', 'TgsignController');
 Route::resource('/task', 'TaskController');
+Route::post('/searchtask', 'TaskController@search');
+
+Route::group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin'], function () {
+	Route::get('/user', 'UserController@index');
+	Route::get('/user/{id}/set', 'UserController@setboss');
+	Route::get('/user/{id}/cancel', 'UserController@cancelboss');
+});

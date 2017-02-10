@@ -9,6 +9,11 @@ use App\File;
 
 class FileController extends Controller
 {
+	public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
 	public function index()
 	{
 		return view('file.index')->withFiles(File::all());
